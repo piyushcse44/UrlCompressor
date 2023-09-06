@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ='{% static "home.css" %}'>
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <a href="{% url 'welcome' %}">Welcome To HomePage</a>
+    </h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, enim deleniti repudiandae esse id similique nesciunt ipsa, expedita temporibus aperiam tempora doloribus dolores. Ullam nihil eos itaque dolore adipisci deserunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. In est minima quidem illo voluptatibus cumque error voluptatem itaque? Necessitatibus nihil tempore mollitia autem nobis, molestias provident animi iusto aperiam eius!</p>
+    <form class ="form" request="POST">
+        {% csrf_token %}
+        <h2>WELCOME TO FORM</h2>
+        {% for value in data %}
+        
+        {% if value == 'Name' %}
+        {{value}} : <input type ="txt" placeholder="piyush"> 
+        {% elif value == "Email"  %}
+        {{value}} : <input type ="email" placeholder="abc@gmail.com">
+        {% elif value == 'Phn_no'  %}
+         {{value}} : <input type="number" placeholder="1234">
+         {% elif value == 'Topic'  %}
+        {{value}} : <input type ="txt" placeholder="job related">
+        {% else %}
+        {{value}} : <input type ="txt" placeholder="job related">
+        {% endif %}
+        {% endfor %}
+        <input class="submit_form" type="submit" name="Submit">
+
+
+    </form>
+</body>
+</html>

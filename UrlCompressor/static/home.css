@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    color: black;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    color: brown;
+    background-color: azure;
+    height: 50px;
+    width: 500px;
+    padding: 10px;
+
+}
+
+.form .submit_form{
+   height: 30px;
+   width: 100px;
+    margin-left: 200px;
+    margin-top: 20px;
+    background-color: blue;
+
+}
