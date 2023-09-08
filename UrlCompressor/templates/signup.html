@@ -12,14 +12,15 @@
         <div class="card">
           <div class="card_title">
             <h1>Create Account</h1 >
-            <span>Already have an account? <a href="{% url 'login' %}">Sign In</a></span>
+            <span>Already have an account? <a href="{% url 'user_login' %}">Sign In</a></span>
           </div>
           <div class="form">
-          <form action="{% url 'signup' %}" method="POST">
+          <form action="" method="POST">
             {% csrf_token %}
             <input type="text" name="username" id="username" placeholder="UserName" />
             <input type="email" name="email" placeholder="Email" id="email" />
-            <input type="password" name="password" placeholder="Password" id="password" />
+            <input type="password" name="password1" placeholder="Password" id="password" />
+            <input type="password" name="password2" placeholder="Confirm Password" id="password2" />
             <button>Sign Up</button>
             </form>
           </div>
