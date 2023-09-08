@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href ='{% static "home.css" %}'>
+    <link rel="stylesheet" href ='{% static "css/home.css" %}'>
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        <a href="{% url 'welcome' %}">Welcome To HomePage</a>
-    </h1>
+    <nav class ="home_nav">
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'log_out' %}"><button>LogOut</button></a>
+        {% else %}
+        <a href = "{% url 'login' %}"><button class = "login_signup_btn">Login</button></a>
+        <a href ="{% url 'signup' %}"><button class = "login_signup_btn">Signup</button></a>
+        {% endif %}
+
+    </nav>
+    
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, enim deleniti repudiandae esse id similique nesciunt ipsa, expedita temporibus aperiam tempora doloribus dolores. Ullam nihil eos itaque dolore adipisci deserunt?Lorem ipsum, dolor sit amet consectetur adipisicing elit. In est minima quidem illo voluptatibus cumque error voluptatem itaque? Necessitatibus nihil tempore mollitia autem nobis, molestias provident animi iusto aperiam eius!</p>
     <form class ="form" request="POST">
         {% csrf_token %}
@@ -33,5 +40,6 @@
 
 
     </form>
+
 </body>
 </html>
