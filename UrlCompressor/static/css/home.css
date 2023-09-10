@@ -1,3 +1,8 @@
+.home_nav{
+    display: flex;
+    background-color: wheat;   
+    border: 10px wheat solid;
+}
 h1{
     text-align: center;
     color: black;
