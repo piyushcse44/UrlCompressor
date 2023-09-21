@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CustomUserCreationForm
 from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def homepage(request):
@@ -14,7 +16,8 @@ def homepage(request):
 
 
 def user_login(request):
-
+    
+  
     if request.user.is_authenticated:
         return redirect('profile')
    
@@ -23,7 +26,6 @@ def user_login(request):
         password = request.POST['password']
         
         try:
-            print(username)
             user = User.objects.get(username=username) 
         except:
             messages.error(request,'Username Does not Exist')
@@ -44,13 +46,28 @@ def log_out(request):
     logout(request)
     return redirect('user_login')
 
+
+
+
+
 def signup(request):
+  
+
+    
+
+   
+    if request.user.is_authenticated:
+        return redirect('profile')
+    
+    
+
     page = 'register'
     form = CustomUserCreationForm()  # Use your custom form here
     if request.method == 'POST':
+        
         form = CustomUserCreationForm(request.POST)
+     
         if form.is_valid():
-            print("enter")
             user = form.save(commit=False)
             user.save()
             return redirect('homepage')

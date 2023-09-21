@@ -2,7 +2,7 @@ from django.db import models
 import uuid
 
 
-class UrlCompressor(models.Model):
+class shorturl(models.Model):
     id = models.UUIDField(default = uuid.uuid4,unique=True,primary_key=True,editable=False)
     OriginalUrl = models.CharField(max_length=250)
     CompressedUrl = models.CharField(max_length=250)
