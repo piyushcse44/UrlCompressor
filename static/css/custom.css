@@ -1,0 +1,36 @@
+.url_compressor_inupt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.url_input{
+    width: 100% !important;
+}
+
+.fix_domin{
+    font-weight: bold;
+    cursor: not-allowed;
+    border: none;
+    background: #fff !important;
+    outline: black !important;
+    color: #0807077d !important ;
+    box-sizing: revert-layer !important;
+    box-shadow: 1px 1px 10px #0000003b !important;
+   
+   
+}
+.fix_domin_container, .custom_url_container{
+    padding: 0%;
+}
+
+.fix_domin_label , .long_domin_label{
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: flex;
+  align-items: start;
+
+}
+

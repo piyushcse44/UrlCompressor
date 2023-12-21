@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header-section %}
+{% endblock %}
+{% block bnner-section %}
+{% endblock %}
+{% block main_content %}
+
+    <!--============= Sign In Section Starts Here =============-->
+  
+    <div class="account-section bg_img" data-background="{% static 'images/account-bg.jpg' %}" style="background-image: url(&quot;./static/images/account-bg.jpg&quot;);">
+        <div class="container">
+            <div class="account-title text-center">
+                <a href='{% url "home" %}' class="back-home"><i class="fas fa-angle-left"></i><span>Back <span class="d-none d-sm-inline-block">To Cortaly</span></span></a>
+                <a href='{% url "home" %}' class="logo">
+                    <img src='{% static "/images/logo/logo.png" %}' alt="logo">
+                </a>
+            </div>
+            <div class="account-wrapper">
+                <div class="account-header">
+                    <h4 class="title">Let's get started</h4>
+                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="sign-in-with"><img src='{% static "/images/icon/google.png" %}' alt="icon"><span>Sign Up with Google</span></a>
+                </div>
+                <div class="or">
+                    <span>OR</span>
+                </div>
+                <div class="account-body">
+                    <span class="d-block mb-20">Sign up with your work email</span>
+                    <form class="account-form" method="post" action="{% url 'user_signup' %}">
+                        {% csrf_token %}
+                        
+                        <!-- Display form fields individually -->
+                        {% for field in form %}
+                        
+                            <div class="form-group">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                
+                                {{ field }}
+
+                                {% for error in field.errors %}
+                                        <span class="text-danger">{{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+                        {% endfor %}
+                        
+                        
+                        <div class="form-group text-center">
+                            <button type="submit">Try It Now</button>
+                            <span class="d-block mt-15">Already have an account? <a href='{% url "user_login" %}'>Sign In</a></span>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+
+
+
+
+
+            <div class="sponsor-slider-wrapper cl-white text-center mt-40">
+                <h5 class="slider-heading mb-3">Used by over 1,000,000 people worldwide</h5>
+                <div class="sponsor-slider-4 owl-theme owl-carousel owl-loaded owl-drag">
+                           
+                    
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage" style="transform: translate3d(-1954px, 0px, 0px); transition: all 0.25s ease 0s; width: 4560px;"><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor1.png" %}' alt="sponsor">
+                        </div>
+                    </div>
+                    <div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor2.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor3.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor4.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor5.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor6.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor7.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor1.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor2.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor3.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor4.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor5.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor6.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor7.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor1.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor2.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor3.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor4.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item active" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor5.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor6.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor7.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor1.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor2.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor3.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor4.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor5.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor6.png" %}' alt="sponsor">
+                        </div></div><div class="owl-item cloned" style="width: 132.857px; margin-right: 30px;"><div class="sponsor-thumb">
+                            <img src='{% static "/images/sponsor/sponsor7.png" %}' alt="sponsor">
+                        </div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div><div class="owl-thumbs"></div></div>
+                </div>
+            </div>
+        </div>
+        <!--============= Sign In Section Ends Here =============-->
+       {% endblock %}
+       {% block footer-section %}
+       {% endblock %}
+      
+    

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+<script>
+    // Set up a global variable to store the data
+    var contact_form_error = "{{contact_form_status_msg|safe }}";
+</script>           
+
+            {% endblock %}

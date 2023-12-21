@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+     {% block banner_form %}
+    
+     <script>
+        // Set up a global variable to store the data
+        var customBackHalfError = "{{ custom_back_half_error|safe }}";
+    </script>
+    
+
+  
+        <div class="container " id ="url_compressor_form">
+        <div class="banner-content">
+            <h3 class="cate">SHORTEN URLS AND</h3>
+            <h1 class="title">Earn Money</h1>
+            <p>Transforming long, ugly links into Shorten URLs and earn big money. Get paid by every person who visits your URLs.</p>
+        </div>
+        <div class="banner-form-group">
+            <h3 class="subtitle">Shorten URL Is Just Simple</h3>
+            <form class="banner-form url_compressor_inupt" method ="post" action ="{% url 'compressor' %}" >
+                   
+                       
+                           {% csrf_token %}
+                  
+                          <div class="container ">
+                            
+                            <div class="row ">
+                                <label  class ="long_domin_label" name="custom_url">
+                                    long-url :
+                                </label>
+                                <input type="text" class="url_input" placeholder="Enter Long Url" value="{{long_url}}" name="long_url" required pattern="https?://.+">
+                            </div>
+                           <div class="row">
+                            <div class="col-lg-6 fix_domin_container">
+                                <label  class ="fix_domin_label" name="custom_url">
+                                    fix-domin :
+                                </label>
+                                <input type="text" readonly class="url_input fix_domin" value="url_compress.pythonanywhere.com" name="custom_url" required="">
+                            </div>
+                            
+                            <div class="col-lg-6 custom_url_container">
+                                <div class="row">
+                                    <div class="col-lg-1 domin_divider "></div>
+                                <div class="col-lg-11">
+                                    <label  class ="fix_domin_label" name="Custom back-half">
+                                        Custom back-half :
+                                    </label>
+                                    <input type="text" class="url_input" value="{{custom_back_half}}" placeholder="Enter Custom back-half (optional)" name="custom_back_half" >
+                                    
+                                    
+                                </div>
+                                </div>
+                                
+                            </div>
+                           </div>
+                           <div class="row">
+                            <button type="submit" class="url_input" >Shorten <i class="flaticon-startup"></i></button>
+                           </div>
+                           
+                          </div>
+           
+                    
+                 
+                   
+                       
+               
+              
+              
+                
+               
+            </form>
+            
+           
+        </div>
+        </div>
+    
+  
+
+
+   
+        
+  {% endblock %}

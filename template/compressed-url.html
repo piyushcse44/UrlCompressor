@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block banner_form %}
+<div class="container " id ="compressed_url_form">
+            <div class="banner-content">
+                <h3 class="cate">SHORTEN URLS AND</h3>
+                <h1 class="title">Earn Money</h1>
+                <p>Transforming long, ugly links into Shorten URLs and earn big money. Get paid by every person who visits your URLs.</p>
+            </div>
+            <div class="banner-form-group">
+                <h3 class="subtitle">Shorten URL Is Just Simple</h3>
+                <div class="banner-form url_compressor_inupt" method="" action="" >            
+                      
+                              <div class="container ">
+                                
+                                <div class="row ">
+                                    <div class="col-lg-12 fix_domin_container">
+                                        <label  class ="fix_domin_label" name="custom_url">
+                                            long url :
+                                        </label>
+                                        <input type="text" disabled class="url_input fix_domin" value="{{long_url}}" name="long_url" required="">
+                                    </div>
+                                </div>
+                               <div class="row">
+                                <div class="col-lg-12 fix_domin_container">
+                                    <label  class ="fix_domin_label" name="custom_url">
+                                        compressed url :
+                                    </label>
+                                    <input type="text" disabled class="url_input fix_domin" value="{{short_url}}" name="short_url" required="">
+                                </div>
+                                
+                               
+                               </div>
+                            
+                               <div class="row">
+                                <div class="col-lg-6 fix_domin_container">
+                                    <button type="submit" class="url_input" onclick="window.location.href = '{{long_url}}'">
+                                        Go to My Urls <i class="flaticon-startup"></i>
+                                    </button>
+                                    
+
+                                </div>
+                                
+                                <div class="col-lg-6 custom_url_container">
+                                    <div class="row">
+                                        <div class="col-lg-1 domin_divider "></div>
+                                    <div class="col-lg-11">
+                                        <a href="{% url 'compressor' %}" style="width: 100%;">
+                                        <button type="submit" class="url_input">
+                                            Compress Another <i class="flaticon-startup"></i>
+                                        </button>
+                                    </a>
+                                        
+                                                                      
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+                               </div>
+                                   
+                                </div>
+                               </div>
+                               
+                              </div>
+                                                  
+                </form>
+                
+               
+            </div>
+
+
+ {% endblock %}           
+       

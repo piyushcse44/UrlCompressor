@@ -1,0 +1,251 @@
+{% load static %}
+<html lang="en" class=" sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth no-csscolumns-breakbefore no-csscolumns-breakafter no-csscolumns-breakinside flexbox picture srcset webworkers"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Url Compressor</title>
+
+    {% block css-link %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+
+    {% endblock %}
+
+
+</head>
+
+<body>
+    <!--============= ScrollToTop Section Starts Here =============-->
+    <div class="overlayer" id="overlayer" style="display: none;">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here =============-->
+
+   {% block header-section %}
+    <!--============= Header Section Starts Here =============-->
+    <header class="header-section">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/logo/logo.png' %}" alt="logo">
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% static 'payout-rates.html' %}">Payout Rates</a>
+                    </li>
+                    <li>
+                        <a href="{% static 'faq.html' %}">Faq</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#0">Blog</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="{% static 'blog.html' %}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{% static 'blog-single.html' %}">Blog Single</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="d-sm-none text-center">
+                        <a href="{% url 'user_login' %}" class="header-button active">Login</a>
+                    </li>
+                    <li class="d-sm-none text-center">
+                        <a href="{% url 'user_signup' %}" class="mb-4 header-button">Register</a>
+                    </li>
+                </ul>
+                <div class="header-bar d-lg-none mr-sm-3">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header-right">
+
+                      {% if request.user.is_authenticated %}
+                            <a href="{% url 'user_profile' %}" class="header-button d-none d-sm-inline-block m-0 active">Profile</a>
+                            <a href="{% url 'user_logout' %}" class="header-button d-none d-sm-inline-block m-0">Logout</a>
+                      {% else %}
+                            <a href="{% url 'user_login' %}" class="header-button d-none d-sm-inline-block m-0 active">Login</a>
+                            <a href="{% url 'user_signup' %}" class="header-button d-none d-sm-inline-block m-0">Register</a>      
+                      {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--============= Header Section Ends Here =============-->
+
+    {% endblock %}
+
+    {% block bnner-section %}
+    <!--============= Banner Section Starts Here =============-->
+    <section class="banner-section">
+        <div class="banner-bg bg_img" data-background="{% static 'images/banner/banner-bg.jpg' %}" style="background-image: url(&quot;./static/images/banner/banner-bg.jpg&quot;);">
+            <div class="banner-bg-shape"><img src="{% static 'images/banner/banner-shape.png' %}" alt="banner"></div>
+            <div class="round-1">
+                <img src="{% static 'images/banner/01.png' %}" alt="banner">
+            </div>
+            <div class="round-2">
+                <img src="{% static 'images/banner/02.png' %}" alt="banner">
+            </div>
+        </div>
+        
+        <!-- Banner Form -->
+
+        {% block banner_form %}
+        {% endblock %}
+
+        <!-- Banner Form ends -->
+
+    </section>
+
+    {% endblock %}
+
+
+
+
+    <!--============= Banner Section Ends Here =============-->
+
+
+     <!--============= Main section starts Here =============-->
+
+            {% block main_content %}
+            {% endblock %}
+
+     <!--============= Main Section Ends Here =============-->
+
+     {% block footer-section %}
+      <!--============= Footer Section Starts Here =============-->
+<footer class="footer-section padding-top">
+    <div class="footer-bg bg_img" data-background="{% static 'images/footer/footer-bg.jpg' %}" style="background-image: url(&quot;./static/images/footer/footer-bg.jpg&quot;);"></div>
+    <div class="footer-bg d-md-block d-none"><img src="{% static 'images/footer/wave.png' %}" alt="footer"></div>
+    <div class="container">
+        <div class="section-header cl-white-499">
+            <h5 class="cate">Contact Us</h5>
+            <h2 class="title">Get in touch!</h2>
+            <p>We thrive to ensure that you get the most out of your experience</p>
+        </div>
+
+
+        <form class="contact-form" id="contact_form_submit" method="post" action="{% url 'contact_us' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Your Full Name</label>
+                <input type="text" name="name" id="name" value="{{name}}" placeholder="Enter Your Full Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" value="{{email}}" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" aria-valuemax="{{mess}}" placeholder="Enter Your Message"></textarea>
+            </div>
+            <div class="form-group check-group">
+                <input type="checkbox" id="check" required="">
+                <label for="check">I agree to receive emails, newsletters and promotional messages</label>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+
+
+
+        <div class="footer-top">
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/logo/footer-logo.png' %}" alt="logo">
+                </a>
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="#0"><img src="{% static 'images/footer/neteller.png' %}" alt="footer"></a>
+                </li>
+                <li>
+                    <a href="#0"><img src="{% static 'images/footer/skrill.png' %}" alt="footer"></a>
+                </li>
+                <li>
+                    <a href="#0"><img src="{% static 'images/footer/paypal.png' %}" alt="footer"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-area">
+                <div class="left cl-white">
+                    <p>© Copyright 2023 | <a href="#0">UrlCompressor</a> By Piyush Kumar</p>
+                </div>
+                <ul class="social-icons">
+                    <li>
+                        <a href="#0" class="active">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0" class="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0" class="">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0" class="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--============= Footer Section Ends Here =============-->
+{% endblock %}
+
+{% block js-link %}
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/nice-select.js' %}"></script>
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/owl.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/paroller.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/alerto.js' %}"></script>
+
+ {% endblock %}   
+
+   
+
+    
+
+</body></html>
