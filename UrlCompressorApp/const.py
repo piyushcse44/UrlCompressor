@@ -108,14 +108,22 @@ def generate_short_url(request,long_url):
     unique_key = CurrentAvaliableUniqueKey.objects.get()
     short_url = base64_to_string(unique_key.unique_key)
     update_unique_key(unique_key)
-    ListShortUrls.objects.create(long_url = long_url,user = request.user,short_url = short_url)
+    if request.user.is_authenticated:
+        ListShortUrls.objects.create(long_url = long_url,user = request.user,short_url = short_url)
+    else:
+                ListShortUrls.objects.create(long_url = long_url,short_url = short_url)
+
     return short_url
 
 
 def accept_user_short_url(request,long_url,short_url):
 
     if verify_short_url(short_url=short_url):
-        ListShortUrls.objects.create(long_url=long_url,user = request.user,short_url=short_url)
+        if request.user.is_authenticated:
+            ListShortUrls.objects.create(long_url=long_url,user = request.user,short_url=short_url)
+        else:
+            ListShortUrls.objects.create(long_url=long_url,short_url=short_url)
+
         return short_url
     else:
         return unavilable_error_msg

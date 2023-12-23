@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'UrlCompressorApp',
     'ContactUs',
     'User',
+    'Faq',
+    'Payout',
      # social auth
     'social_django',
 ]

@@ -47,7 +47,7 @@
                             Why Join Us?
                         </h2>
                         <p>urlcompressor is a completely free tool where you can create short links, which apart from being free, you get paid! So, now you can make money from home, when managing and protecting your links.</p>
-                        <a href='#0' class="custom-button active mt-2">Create Your Account</a>
+                        <a href="{% url 'user_signup' %}" class="custom-button active mt-2">Create Your Account</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -398,7 +398,7 @@
                             <div class="section-header left-style mb-lg-0">
                                 <h5 class="cate">Testimonials</h5>
                                 <h2 class="title">5000+ happy clients all around the world</h2>
-                                <a href='#0' class="button-3 active mt-md-2">Leave a review <i class="flaticon-right"></i></a>
+                                <a href="{%url 'contact_us' %}" class="button-3 active mt-md-2">Leave a review <i class="flaticon-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -407,17 +407,5 @@
         </div>
     </section>
     <!--============= Testimonial Section Ends Here =============-->
-    <!--============= Call In Action Section Starts Here =============-->
-    <section class="call-in-action padding-top padding-bottom section-bg text-center">
-        <div class="container">
-            <div class="section-header mb-low">
-                <h5 class="cate">JOIN US NOW</h5>
-                <h2 class="title">Boost Your Earnings</h2>
-                <p>Sign up for free and become one of the millions of people around the world
-                    who have fallen in love with Cortaly</p>
-            </div>
-            <a href='#0' class="custom-button">Start earning now!</a>
-        </div>
-    </section>
-    <!--============= Call In Action Section Ends Here =============-->
+  
 {% endblock %}

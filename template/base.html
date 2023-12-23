@@ -52,28 +52,29 @@
                         <a href="{% url 'home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="{% static 'payout-rates.html' %}">Payout Rates</a>
+                        <a href="{% url 'payout' %}">Payout Rates</a>
                     </li>
                     <li>
-                        <a href="{% static 'faq.html' %}">Faq</a>
+                        <a href="{% url 'faq' %}">Faq</a>
                     </li>
-                    <li class="menu-item-has-children">
-                        <a href="#0">Blog</a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="{% static 'blog.html' %}">Blog</a>
-                            </li>
-                            <li>
-                                <a href="{% static 'blog-single.html' %}">Blog Single</a>
-                            </li>
-                        </ul>
+                  
+                    {% if request.user.is_authenticated %}
+
+                    <li class="d-sm-none text-center">
+                        <a href="{% url 'user_profile' %}" class="header-button active">Profile</a>
                     </li>
+                    <li class="d-sm-none text-center">
+                        <a href="{% url 'user_logout' %}" class="mb-4 header-button">Logout</a>
+                    </li>
+
+                    {% else %}
                     <li class="d-sm-none text-center">
                         <a href="{% url 'user_login' %}" class="header-button active">Login</a>
                     </li>
                     <li class="d-sm-none text-center">
                         <a href="{% url 'user_signup' %}" class="mb-4 header-button">Register</a>
                     </li>
+                    {% endif %}
                 </ul>
                 <div class="header-bar d-lg-none mr-sm-3">
                     <span></span>
@@ -134,6 +135,24 @@
             {% endblock %}
 
      <!--============= Main Section Ends Here =============-->
+
+
+     {% block call-in-action %}
+    <!--============= Call In Action Section Starts Here =============-->
+    <section class="call-in-action padding-top padding-bottom section-bg text-center">
+        <div class="container">
+            <div class="section-header mb-low">
+                <h5 class="cate">JOIN US NOW</h5>
+                <h2 class="title">Boost Your Earnings</h2>
+                <p>Sign up for free and become one of the millions of people around the world
+                    who have fallen in love with Cortaly</p>
+            </div>
+            
+            <a href="{% url 'user_signup' %}" class="custom-button">Start earning now!</a>
+        </div>
+    </section>
+    <!--============= Call In Action Section Ends Here =============-->
+    {% endblock %}
 
      {% block footer-section %}
       <!--============= Footer Section Starts Here =============-->

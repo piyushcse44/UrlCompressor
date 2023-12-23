@@ -28,6 +28,8 @@ urlpatterns = [
     path('app/', include('UrlCompressorApp.urls')),
     path('contact-us/', include('ContactUs.urls')),
     path('user/',include('User.urls')),
+    path('faq/',include('Faq.urls')),
+    path('payout/',include('Payout.urls')),
     
 ]
 

@@ -67,6 +67,14 @@ def user_profile(request):
     user = request.user
     profile = Profile.objects.get(user = user)
     url_list = ListShortUrls.objects.filter(user = user)
+
+    if request.method == 'POST':
+        name = request.POST.get('name',"")
+        email = request.POST.get('email',"abc@gmail.com")
+        if name !="":
+            profile.name = name
+            profile.save()
+
     data ={
         "profile" : profile,
          "url_list" : url_list,
